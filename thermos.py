@@ -33,6 +33,9 @@ def get_last_existing_bookmarks(num):
     return sorted(bookmarks, key=lambda bm: bm['date'], reverse=True)[:num]
 
 
+def get_logged_in_user():
+    return models.User.query.filter_by(username='kushal').first()
+
 @app.route('/')
 def index():
     return render_template('index.html', title='Title passed from controller', text='Text passed from controller',
@@ -45,7 +48,7 @@ def add():
     if form.validate_on_submit():
         url = form.url.data
         description = form.description.data
-        bm = models.Bookmark(url=url, description=description)
+        bm = models.Bookmark(user=get_logged_in_user(), url=url, description=description)
         db.session.add(bm)
         db.session.commit()
         store_bookmark(url, description)
