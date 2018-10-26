@@ -1,7 +1,7 @@
 from flask_script import Manager, prompt_bool
 
 from models import User
-from thermos import app, db
+from . import app, db
 
 manager = Manager(app)
 
