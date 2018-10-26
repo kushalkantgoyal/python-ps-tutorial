@@ -11,3 +11,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'th
 app.config['DEBUG'] = True
 
 db = SQLAlchemy(app)
+
+import models
+import views
