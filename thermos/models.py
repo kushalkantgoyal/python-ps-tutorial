@@ -2,7 +2,7 @@ from datetime import datetime
 
 from sqlalchemy import desc
 
-from . import db
+from thermos import db
 
 
 class Bookmark(db.Model):

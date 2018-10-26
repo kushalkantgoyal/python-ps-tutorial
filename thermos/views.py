@@ -2,7 +2,7 @@ from flask import render_template, flash, redirect, url_for
 
 from forms import BookmarkForm
 from models import Bookmark, User
-from . import db, app
+from thermos import db, app
 
 
 # def get_last_existing_bookmarks(num):
