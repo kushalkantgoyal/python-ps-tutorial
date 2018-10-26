@@ -23,7 +23,8 @@
                 <ul>
                     {% for bm in existing_bookmarks %}
                         <li>
-                            {{ bm.user.username }} has added <a href="{{ bm.url }}">{{ bm.url }}</a>
+                            {{ bm.user.username }} has added <a
+                                href="{{ url_for('user', username=bm.user.username) }}">{{ bm.description }}</a>
                         </li>
                     {% endfor %}
                 </ul>
